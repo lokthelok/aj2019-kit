@@ -1,5 +1,8 @@
 # AJ2019 Electronics Kit
 
+## Released Firmware
+[Download Here](https://github.com/lokthelok/aj2019-kit/releases)
+
 ## Using this Repo
 Clone this repo to your local machine and commit all changes in a branch. Once the changes have been verified, they will be merged back to the trunk.
 [GitHub Basics Tutorial](https://youtu.be/0fKg7e37bQE)
