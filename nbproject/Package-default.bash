@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/aj2019-kit.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=aj2019-kit.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=aj2019-kit/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/gizmo_firmware.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=gizmo_firmware.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=gizmofirmware.x/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/aj2019-kit/bin
+makeDirectory ${TMPDIR}/gizmofirmware.x/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/aj2019-kit.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/gizmofirmware.x.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/aj2019-kit.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/gizmofirmware.x.tar *
 checkReturnCode
 
 # Cleanup

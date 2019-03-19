@@ -52,9 +52,11 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "interrupt_manager.h"
-#include "pwm2.h"
+#include "tmr1.h"
 #include "pwm1.h"
+#include "pwm2.h"
 #include "pwm3.h"
+#include "memory.h"
 #include "adc1.h"
 #include "eusart.h"
 

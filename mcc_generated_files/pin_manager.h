@@ -115,15 +115,22 @@
 #define RA4_SetAnalogMode()         do { ANSELAbits.ANSA4 = 1; } while(0)
 #define RA4_SetDigitalMode()        do { ANSELAbits.ANSA4 = 0; } while(0)
 
-// get/set RA5 procedures
-#define RA5_SetHigh()            do { LATAbits.LATA5 = 1; } while(0)
-#define RA5_SetLow()             do { LATAbits.LATA5 = 0; } while(0)
-#define RA5_Toggle()             do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0)
-#define RA5_GetValue()              PORTAbits.RA5
-#define RA5_SetDigitalInput()    do { TRISAbits.TRISA5 = 1; } while(0)
-#define RA5_SetDigitalOutput()   do { TRISAbits.TRISA5 = 0; } while(0)
-#define RA5_SetPullup()             do { WPUAbits.WPUA5 = 1; } while(0)
-#define RA5_ResetPullup()           do { WPUAbits.WPUA5 = 0; } while(0)
+// get/set RX aliases
+#define RX_TRIS                 TRISAbits.TRISA5
+#define RX_LAT                  LATAbits.LATA5
+#define RX_PORT                 PORTAbits.RA5
+#define RX_WPU                  WPUAbits.WPUA5
+#define RX_OD                   ODCONAbits.ODA5
+#define RX_SetHigh()            do { LATAbits.LATA5 = 1; } while(0)
+#define RX_SetLow()             do { LATAbits.LATA5 = 0; } while(0)
+#define RX_Toggle()             do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0)
+#define RX_GetValue()           PORTAbits.RA5
+#define RX_SetDigitalInput()    do { TRISAbits.TRISA5 = 1; } while(0)
+#define RX_SetDigitalOutput()   do { TRISAbits.TRISA5 = 0; } while(0)
+#define RX_SetPullup()          do { WPUAbits.WPUA5 = 1; } while(0)
+#define RX_ResetPullup()        do { WPUAbits.WPUA5 = 0; } while(0)
+#define RX_SetPushPull()        do { ODCONAbits.ODA5 = 0; } while(0)
+#define RX_SetOpenDrain()       do { ODCONAbits.ODA5 = 1; } while(0)
 
 /**
    @Param
@@ -232,6 +239,90 @@ extern void (*IOCAF0_InterruptHandler)(void);
 
 */
 void IOCAF0_DefaultInterruptHandler(void);
+
+
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Interrupt on Change Handler for the IOCAF5 pin functionality
+ * @Example
+    IOCAF5_ISR();
+ */
+void IOCAF5_ISR(void);
+
+/**
+  @Summary
+    Interrupt Handler Setter for IOCAF5 pin interrupt-on-change functionality
+
+  @Description
+    Allows selecting an interrupt handler for IOCAF5 at application runtime
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    InterruptHandler function pointer.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCAF5_SetInterruptHandler(MyInterruptHandler);
+
+*/
+void IOCAF5_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+  @Summary
+    Dynamic Interrupt Handler for IOCAF5 pin
+
+  @Description
+    This is a dynamic interrupt handler to be used together with the IOCAF5_SetInterruptHandler() method.
+    This handler is called every time the IOCAF5 ISR is executed and allows any function to be registered at runtime.
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCAF5_SetInterruptHandler(IOCAF5_InterruptHandler);
+
+*/
+extern void (*IOCAF5_InterruptHandler)(void);
+
+/**
+  @Summary
+    Default Interrupt Handler for IOCAF5 pin
+
+  @Description
+    This is a predefined interrupt handler to be used together with the IOCAF5_SetInterruptHandler() method.
+    This handler is called every time the IOCAF5 ISR is executed. 
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCAF5_SetInterruptHandler(IOCAF5_DefaultInterruptHandler);
+
+*/
+void IOCAF5_DefaultInterruptHandler(void);
 
 
 
