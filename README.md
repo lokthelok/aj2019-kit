@@ -8,6 +8,8 @@ Clone this repo to your local machine and commit all changes in a branch. Once t
 [GitHub Basics Tutorial](https://youtu.be/0fKg7e37bQE)
 [GitHub Branch Tutorial](https://youtu.be/oFYyTZwMyAg)
 
+## Hardware Build Guide
+[Get it Here](assets/Hardware Build Guide.pdf)
 
 ## Functional Requirements
 Note: Values in `quote sections` are approximate and need to be decided based on testing.
