@@ -9,7 +9,7 @@ Clone this repo to your local machine and commit all changes in a branch. Once t
 [GitHub Branch Tutorial](https://youtu.be/oFYyTZwMyAg)
 
 ## Hardware Build Guide
-[Get it Here](assets/Hardware Build Guide.pdf)
+[Get it Here](assets/HardwareBuildGuide.pdf)
 
 ## Functional Requirements
 Note: Values in `quote sections` are approximate and need to be decided based on testing.
