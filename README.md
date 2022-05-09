@@ -29,7 +29,7 @@ Note: Values in `quote sections` are approximate and need to be decided based on
 3. Menu Functionality
    - There needs to be a simple and even instinctive way to switch between game mode and connection mode. Or eliminate the need so that connection can occur at any time regardless of gameplay. There also needs to be a way to reset the game. As multiple button presses cannot be detected, long presses on single buttons will likely be the method for the above actions. 
 ## Technical Specifications and Considerations:
-The schematic is available from [Circuit Maker](https://workspace.circuitmaker.com/Projects/Details/Lachlan-Harper/AJ2019).
+The schematic is available from [Circuit Maker](https://workspace.circuitmaker.com/Projects/Details/lokthelok/AJ2019).
 Circuit Maker (free) has been used for hardware development. MPLABX IDE has been used for firmware development. The MPLAB Code Configurator (MCC) plugin has been used for quick firmware setup. A PICKit3 has been used as the programmer. 
 
 ### Buttons
